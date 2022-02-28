@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.a{
+    background: rebeccapurple;
+    
+}
+
+.b{
+   background: red; border: 5px solid #000;
+}
+</style>
+<body>
+    <div id="app">
+        {{msg}}
+        {{count+1}}
+        {{isok?"ok":"no"}}
+        <h3 v-bind:class="classA">csj</h3>
+        <h3 :class="{'a':isA,'b':isB}">csj</h3>
+        <hr>
+        <div v-if="islogin">你好</div>
+        <div v-else>请登录</div>
+        <hr>
+        <div v-show="isshow">123</div>
+        <button v-on:click="add">按钮1</button>
+        <a href="https://www.baidu.com"@click="fn()">百度</a>
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+           el:"#app",//挂载元素
+           data:{
+               msg:"你好 vue",
+               count:1,
+               isok:true,
+               classA:"a",
+               isA:true,
+               isB:true,
+               islogin:true,
+               isshow:true,
+               count:0,
+           },
+           methods:{
+           add(){
+               this.count++;
+           },
+           fn(){
+               console.log(vm.fn);
+           }
+        }     
+       })
+       console.log(vm.msg);
+       console.log(vm.$el);
+       console.log(vm.$data);
+      
+    </script>
+</body>
+</html>

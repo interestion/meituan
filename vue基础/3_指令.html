@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item,index in arr":key="index">{{item}} {{index}}</li>
+        </ul>
+        <div v-for="item,ket in obj":key="key">{{item}} {{key}}</div>
+    <div>
+        <h3>名字是{{name}}</h3>
+        <input type="text" v-model="name">
+    </div>
+    <div>
+        <h3>性别:{{sex}}</h3>
+        <input type="radio" v-model="sex" value="男">男
+        <input type="radio" v-model="sex" value="女">女
+    </div>
+    <div>
+        <h3>爱好:{{hob}}</h3>
+        <input type="checkbox" v-model="hob" value="吃饭">吃饭
+        <input type="checkbox" v-model="hob" value="睡觉">睡觉
+        <input type="checkbox" v-model="hob" value="敲代码">敲代码
+    </div>
+        
+    
+    
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                arr:['a','b','c'],
+                obj:{
+                    name:"张三",
+                    age:18,
+                    address:"常德",
+
+                },
+                name:"",
+                sex:"",
+                hob:[],
+
+            }
+        })
+    </script>
+</body>
+</html>
